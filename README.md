@@ -1,6 +1,7 @@
 # Sources
 # This Repository is not finished
-Resources for a roblox game Da Hood
+
+Providing sources to help you make your own roblox da hood script!
 
 Credits to bloodball for finding the ui libraries :D!
 
