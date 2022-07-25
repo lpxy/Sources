@@ -4,7 +4,7 @@ Providing sources to help you make your own roblox da hood script!
 
 I will keep on uploading on my free time!
 
-Take use for your script if you'd like!
+Take use for your script if you like!
 
 No credits needed. if you'd want to, thats nice!
 
