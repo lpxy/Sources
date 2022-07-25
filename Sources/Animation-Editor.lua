@@ -18,7 +18,8 @@ local Fall = 2510195892
 
 
 
--->> Don't make any changes below. <<--
+-->> Don't make any changes below.
+-->> pcall wasn't necessary but i still added it anyways, enjoy!
 local A = game.Players.LocalPlayer.Character.Animate
 pcall(function()
 	A.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=".. Idle1
