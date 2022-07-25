@@ -7,6 +7,7 @@ I will keep on uploading on my free time!
 Take use for your script if you like!
 
 No credits needed. if you'd want to, thats nice!
+- You can join my discord server to help it gain more members!:D
 
 UI Libraries - https://github.com/bloodball :D
 
