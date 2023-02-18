@@ -1,1 +1,21 @@
-loadstring(game:HttpGet('https://raw.githubusercontent.com/lerkermer/lua-projects/master/SwagModeV002'))()
+autostomp = true
+tping = true
+
+game:GetService('RunService').Stepped:connect(function()
+	if autostomp == true then
+		game.ReplicatedStorage.MainEvent:FireServer("Stomp")
+	end
+end)
+game:GetService('RunService').Stepped:connect(function()
+if tping == true then
+for i, v in pairs(game:GetService'Players':GetChildren()) do
+            if v and v.Character then
+                local character = v.Character
+        	        if character.BodyEffects["K.O"].Value == true then
+            	        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(character.UpperTorso.Position) * CFrame.new(0,3,0)
+                end
+            end
+        end
+    end
+end)
+
