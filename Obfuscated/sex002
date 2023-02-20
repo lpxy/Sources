@@ -1,20 +1,19 @@
-
-autostomp = true
 tping = true
-
-game:GetService('RunService').Stepped:connect(function()
-	if autostomp == true then
-		game.ReplicatedStorage.MainEvent:FireServer("Stomp")
-	end
-end)
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
 game:GetService('RunService').Stepped:connect(function()
 if tping == true then
-for i, v in pairs(game:GetService'Players':GetChildren()) do
-            if v and v.Character then
-                local character = v.Character
-        	        if character.BodyEffects["K.O"].Value == true then
-            	        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(character.UpperTorso.Position) * CFrame.new(0,3,0)
-                end
+    for _, v in pairs(Workspace.Players:GetChildren()) do
+        local Previous = nil
+            if v.BodyEffects["K.O"].Value == true and v.BodyEffects["Grabbed"].Value == nil and v.BodyEffects["Dead"].Value == false then
+                Previous = LocalPlayer.Character.HumanoidRootPart.CFrame.Position
+                    repeat
+                    task.wait()
+                    LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Players[v.Name].Character.UpperTorso.Position + Vector3.new(0, 3, 0))
+                    ReplicatedStorage.MainEvent:FireServer("Stomp")
+                    until v.BodyEffects["Dead"].Value == true
+                LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Previous)
             end
         end
     end
